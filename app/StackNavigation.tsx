@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Login from './login';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import Sign_Up from './sign_up';
+import Home from './home';
 const Stack = createStackNavigator();
 
 type StackNavigation = { 
@@ -30,6 +31,7 @@ export function StackNavigation() {
     <Stack.Navigator initialRouteName="Login">
       <Stack.Screen options={{ headerShown: false }} name="Login" component={Login} />
       <Stack.Screen options={{ headerShown: false }} name="Sign_Up" component={Sign_Up} />
+      <Stack.Screen options={{ headerShown: false }} name="Home" component={Home} />
     </Stack.Navigator>
   
   );

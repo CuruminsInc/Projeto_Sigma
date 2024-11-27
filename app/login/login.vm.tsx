@@ -10,8 +10,13 @@ const useLogin = () => {
     navigation.navigate('Sign_Up')
   }
 
+  const goHome = async () =>{
+    navigation.navigate('Home')
+  }
+
   return {
-    goSignUp
+    goSignUp,
+    goHome
   };
 };
 

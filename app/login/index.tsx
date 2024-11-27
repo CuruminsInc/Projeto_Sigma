@@ -4,7 +4,7 @@ import useLogin from './login.vm';
 
 export default function Login() {
 
-    const {goSignUp} = useLogin()
+    const {goSignUp, goHome} = useLogin()
     return (
         <View style={{ flex: 1 }}>
             <View style={{alignItems:'center', alignSelf:'center', justifyContent:'center', height:'90%', width:'100%'}}>
@@ -22,7 +22,7 @@ export default function Login() {
                 </View>
 
                 <View>
-                    <TouchableOpacity onPress={() => console.log('Sim')}>
+                    <TouchableOpacity onPress={() => goHome()}>
                         <View style={{ width: 150, height: 50, backgroundColor: '#2EC7C0',borderWidth:1,borderColor:'black', justifyContent: 'center', borderRadius: 20, marginTop:25 }}>
                             <Text style={{ alignSelf: 'center' }}>Logar</Text>
                         </View>
