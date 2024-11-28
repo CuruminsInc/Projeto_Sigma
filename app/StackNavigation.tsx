@@ -5,14 +5,14 @@ import Login from './login';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import Sign_Up from './sign_up';
 import Home from './home';
-import Buy from './buy';
+import User from './user';
 const Stack = createStackNavigator();
 
 type StackNavigation = { 
 
   Home: undefined;
   Login: undefined;
-  Buy: undefined;
+  User: undefined;
   Sign_Up: undefined;
   Selection: undefined;
   Play: undefined;
@@ -33,7 +33,7 @@ export function StackNavigation() {
       <Stack.Screen options={{ headerShown: false }} name="Login" component={Login} />
       <Stack.Screen options={{ headerShown: false }} name="Sign_Up" component={Sign_Up} />
       <Stack.Screen options={{ headerShown: false }} name="Home" component={Home} />
-      <Stack.Screen options={{ headerShown: false }} name="Buy" component={Buy} />
+      <Stack.Screen options={{ headerShown: false }} name="User" component={User} />
     </Stack.Navigator>
   
   );
