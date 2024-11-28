@@ -4,7 +4,7 @@ import { StackTypes } from '../StackNavigation';
 import { useState } from 'react';
 
 
-const useLogin = () => {
+const useSign_up = () => {
   const [password, setPassword] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const navigation = useNavigation<StackTypes>();
@@ -27,4 +27,4 @@ const useLogin = () => {
   };
 };
 
-export default useLogin;
+export default useSign_up;
