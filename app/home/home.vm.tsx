@@ -7,11 +7,16 @@ const useHome = () => {
 
 
   const goUser = async (type:string) => {
-    navigation.navigate('User', { type }); // Garantindo que type seja um objeto
+    navigation.navigate('User', { type }); 
+  };
+
+  const goHistory = async (type:string) => {
+    navigation.navigate('History', { type }); 
   };
 
   return {
-    goUser
+    goUser,
+    goHistory
   };
 };
 

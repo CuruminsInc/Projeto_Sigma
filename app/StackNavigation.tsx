@@ -7,6 +7,7 @@ import Sign_Up from './sign_up';
 import Home from './home';
 import User from './user';
 import Car from './car';
+import History from './history';
 const Stack = createStackNavigator();
 
 export type StackNavigation = { 
@@ -16,7 +17,7 @@ export type StackNavigation = {
   User: { type: string };
   Sign_Up: undefined;
   Car: { type: string };
-  Play: undefined;
+  History: { type: string };
   Change_user: undefined;
   Change_password: undefined;
   Add_word: undefined;
@@ -36,6 +37,7 @@ export function StackNavigation() {
       <Stack.Screen options={{ headerShown: false }} name="Home" component={Home} />
       <Stack.Screen options={{ headerShown: false }} name="User" component={User} />
       <Stack.Screen options={{ headerShown: false }} name="Car" component={Car} />
+      <Stack.Screen options={{ headerShown: false }} name="History" component={History} />
     </Stack.Navigator>
   
   );

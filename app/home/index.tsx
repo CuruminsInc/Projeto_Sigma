@@ -5,7 +5,7 @@ import useHome from './home.vm';
 
 export default function Home() {
       
-    const {goUser} = useHome()
+    const {goUser, goHistory} = useHome()
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <View style={{ width: '100%', height: 90, alignItems: 'flex-start', justifyContent: 'center', backgroundColor: '#2EC7C0', borderBottomLeftRadius:15, borderBottomRightRadius:15 }}>
@@ -36,19 +36,19 @@ export default function Home() {
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity >
+                    <TouchableOpacity onPress={()=>goHistory('BUY')} >
                         <View style={{ width: 260, height: 80, borderRadius: 10, backgroundColor: '#2EC7C0', alignItems: 'center',borderWidth:1,borderColor:'black', justifyContent: 'center' }}>
                             <Text style={{ fontSize: 20 }}>Histórico de compra</Text>
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>goHistory('SELL')}>
                         <View style={{ width: 260, height: 80, borderRadius: 10, backgroundColor: '#2EC7C0', alignItems: 'center',borderWidth:1,borderColor:'black', justifyContent: 'center' }}>
                             <Text style={{ fontSize: 20 }}>Histórico de venda</Text>
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>goHistory('ORDER')}>
                         <View style={{ width: 260, height: 80, borderRadius: 10, backgroundColor: '#2EC7C0', alignItems: 'center',borderWidth:1,borderColor:'black', justifyContent: 'center' }}>
                             <Text style={{ fontSize: 20 }}>Histórico de pedidos</Text>
                         </View>
