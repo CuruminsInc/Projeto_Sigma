@@ -6,9 +6,9 @@ const useHome = () => {
   const navigation = useNavigation<StackTypes>();
 
 
-  const goUser = async () => {
-    navigation.navigate('User')
-  }
+  const goUser = async (type:string) => {
+    navigation.navigate('User', { type }); // Garantindo que type seja um objeto
+  };
 
   return {
     goUser
