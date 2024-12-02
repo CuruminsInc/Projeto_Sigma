@@ -8,6 +8,7 @@ import Home from './home';
 import User from './user';
 import Car from './car';
 import History from './history';
+import Information from './informations';
 const Stack = createStackNavigator();
 
 export type StackNavigation = { 
@@ -16,13 +17,9 @@ export type StackNavigation = {
   Login: undefined;
   User: { type: string };
   Sign_Up: undefined;
-  Car: { type: string };
+  Car: { type: string, codeclient:number, codeintern:number };
   History: { type: string };
-  Change_user: undefined;
-  Change_password: undefined;
-  Add_word: undefined;
-  Change_word: undefined;
-  
+  Information: { type: string };
 
 };
 
@@ -38,6 +35,7 @@ export function StackNavigation() {
       <Stack.Screen options={{ headerShown: false }} name="User" component={User} />
       <Stack.Screen options={{ headerShown: false }} name="Car" component={Car} />
       <Stack.Screen options={{ headerShown: false }} name="History" component={History} />
+      <Stack.Screen options={{ headerShown: false }} name="Information" component={Information} />
     </Stack.Navigator>
   
   );

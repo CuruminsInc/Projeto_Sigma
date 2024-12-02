@@ -7,28 +7,6 @@ const operationsell = require('../models/operationsell')
 
 class OperationSellController {
 
-    /*static async ProdutoFindOne(req, res) {
-
-        try {
-
-            const { email, password } = req.query;
-
-            const user = await Produto.findOne({ where: { email, password }, attributes: ['username','email'] })
-
-            if (user) {
-                res.status(200).json(user);
-            } else {
-                res.status(404).json('Usuário não cadastrado')
-            }
-
-
-        } catch (error) {
-            res.status(400).json({ error: true, message: error.message });
-        }
-
-
-    }*/
-
     static async OperationSellFindAll(req, res) {
 
         try {
@@ -60,6 +38,29 @@ class OperationSellController {
                 res.status(404).json('Nenhum produto cadastrado')
             }
 
+        } catch (error) {
+            res.status(400).json({ error: true, message: error.message });
+        }
+    }
+
+
+    static async OperationSellRegister(req, res) {
+        try {
+            const newOperation = await OperationSell.create({
+                date:req.body.date,
+                clientId: req.body.clientId,
+                sellerId: req.body.sellerId,
+                vehicleId: req.body.vehicleId,
+                entry_value: req.body.entry_value,
+                financed_value: req.body.financed_value,
+                total_value: req.body.total_value
+            });
+
+            if (newOperation) {
+                res.status(201).json(newOperation);
+            } else {
+                res.status(400).json('Falha ao cadastrar a venda');
+            }
         } catch (error) {
             res.status(400).json({ error: true, message: error.message });
         }

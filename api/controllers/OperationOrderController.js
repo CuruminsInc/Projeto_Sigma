@@ -35,7 +35,7 @@ class OperationOrderController {
             if (order) {
                 res.status(200).json(order);
             } else {
-                res.status(404).json('Nenhum produto cadastrado')
+                res.status(404).json('Nenhum pedido cadastrado')
             }
 
         } catch (error) {
@@ -43,7 +43,29 @@ class OperationOrderController {
         }
     }
 
-   
+    static async OperationOrderRegister(req, res) {
+        try {
+            const newOperation = await OperationOrder.create({
+                date:req.body.date,
+                clientId: req.body.clientId,
+                sellerId: req.body.sellerId,
+                manufacturerId: req.body.manufacturerId,
+                model: req.body.model,
+                year: req.body.year,
+                color: req.body.color,
+                accessories: req.body.accessories,
+                value:req.body.value
+            });
+
+            if (newOperation) {
+                res.status(201).json(newOperation);
+            } else {
+                res.status(400).json('Falha ao cadastrar o pedido');
+            }
+        } catch (error) {
+            res.status(400).json({ error: true, message: error.message });
+        }
+    }
 
     
 }

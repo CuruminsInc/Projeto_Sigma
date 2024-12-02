@@ -69,13 +69,7 @@ const useHistory = () => {
     useEffect(() => {
         findAll()
     }, [])
-    useEffect(() => {
-        console.log("AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
-        console.log(dataBuy)
-    }, [dataBuy])
-
-
-
+   
     return {
         type,
         dataBuy,
