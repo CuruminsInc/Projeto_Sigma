@@ -1,50 +1,72 @@
-# Welcome to your Expo app 👋
+# Welcome to the project Project Sigma👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Let's start run the project
 
-## Get started
+Before we begin, you will need to have Node.js and Android SKD installed on your machine, have an Apache server running, have the Expo application installed at your smartphone or on your virtual device and a SQL database manager
 
 1. Install dependencies
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies on the api folder and start the database
+   
+```bash
 
-## Learn more
+cd api
+npm install
+npx sequelize-cli db:create
 
-To learn more about developing your project with Expo, look at the following resources:
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+2.1 Install the migrations in this exact order without using migrations:all
+   
+```bash
+npx sequelize-cli db:migrate --name 20241130152604-create-client.js
+npx sequelize-cli db:migrate --name 20241130152612-create-seller.js
+npx sequelize-cli db:migrate --name 20241130152620-create-vehicle.js
+npx sequelize-cli db:migrate --name 20241130152648-create-manufacturer.js
+npx sequelize-cli db:migrate --name 20241130152628-create-operation-buy.js
+npx sequelize-cli db:migrate --name 20241130152637-create-operation-sell.js
+npx sequelize-cli db:migrate --name 20241130152648-create-manufacturer.js
+```
 
-## Join the community
+2.2 Install the seeders in this exact order without using seeder:all
+   
+```bash
+npx sequelize-cli db:seed --seed 20241130165446-demo-client.js
+npx sequelize-cli db:seed --seed 20241130165451-demo-manufacturer.js
+npx sequelize-cli db:seed --seed 20241130165516-demo-seller.js
+npx sequelize-cli db:seed --seed 20241130165522-demo-vehicle.js
+npx sequelize-cli db:seed --seed 20241130165455-demo-operationbuy.js
+npx sequelize-cli db:seed --seed 20241130165512-demo-operationsell.js
+npx sequelize-cli db:seed --seed 20241130165507-demo-operationorder.js
+```
 
-Join our community of developers creating universal apps.
+3. Got to the env.js and put your local ip on the "API_BASE_URL"
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+cd api/config
+```
+
+4. Start the api 
+
+```bash
+npm start
+```
+
+5. Start the app
+
+```bash
+npx expo start
+```
+
+After all these steps and you start running the app. That's it, enjoy the app now
+
+
+## Expo Playstore: https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR&pli=1
+
+## Laragon: https://laragon.org/download/  ( Whith the laragon you can use te apache sever and the heidisql ) 
+
+## Android Studio: https://developer.android.com/studio?hl=pt-br
