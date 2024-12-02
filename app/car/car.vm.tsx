@@ -164,7 +164,7 @@ const useCar = () => {
 
     useEffect(() => {
 
-        if (currentSlide === 4 && codeclient === 0) {
+        if (currentSlide === 4 && codeclient === 0 ||(type==='ORDER' && codeclient===0)) {
             axios.get(apiUrl + 'client/FindAllRecent')
                 .then((response) => {
                     setIdClient(response.data[0].id)

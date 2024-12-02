@@ -284,12 +284,13 @@ export default function Car() {
                                     </View>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity disabled={totalvalue===''||installment==='' || entry===''} onPress={vehiclePost}>
+                                {type==='BUY'?(
+                                    <TouchableOpacity disabled={type!=='BUY' || model==='' || totalvalue===''} onPress={vehiclePost}>
                                     <View
                                         style={{
                                             width: 150,
                                             height: 50,
-                                            backgroundColor:totalvalue===''||installment==='' || entry===''?'#808080':'#2EC7C0',
+                                            backgroundColor:type!=='BUY' || model==='' || totalvalue==='' ?'#808080':'#2EC7C0',
                                             borderWidth: 1,
                                             borderColor: 'black',
                                             justifyContent: 'center',
@@ -300,6 +301,24 @@ export default function Car() {
                                         <Text style={{ alignSelf: 'center' }}>Continue</Text>
                                     </View>
                                 </TouchableOpacity>
+                                ):(
+                                    <TouchableOpacity disabled={type!=='SELL' || totalvalue===''||installment==='' || entry===''} onPress={vehiclePost}>
+                                    <View
+                                        style={{
+                                            width: 150,
+                                            height: 50,
+                                            backgroundColor:type!=='SELL' || totalvalue===''||installment==='' || entry==='' ?'#808080':'#2EC7C0',
+                                            borderWidth: 1,
+                                            borderColor: 'black',
+                                            justifyContent: 'center',
+                                            borderRadius: 20,
+                                            marginTop: 25,
+                                        }}
+                                    >
+                                        <Text style={{ alignSelf: 'center' }}>Continue</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                )}
                             </View>
 
                         </View>
@@ -373,7 +392,7 @@ export default function Car() {
                                 onFocus={() => setIsFocus(true)}
                                 onBlur={() => setIsFocus(false)}
                                 onChange={item => {
-                                    if (item) { // Verifique se item não é null
+                                    if (item) { 
                                         setValue(item.value);
                                         setIsFocus(false);
                                     }

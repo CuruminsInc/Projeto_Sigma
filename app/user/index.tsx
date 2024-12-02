@@ -265,12 +265,12 @@ export default function User() {
                                     </View>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity disabled={homephone===''|| income===0} onPress={clienPost}>
+                                <TouchableOpacity disabled={homephone===''|| income===0|| !income} onPress={clienPost}>
                                     <View
                                         style={{
                                             width: 150,
                                             height: 50,
-                                            backgroundColor: homephone===''|| income===0? '#808080' : '#2EC7C0',
+                                            backgroundColor: homephone===''|| income===0 || !income? '#808080' : '#2EC7C0',
                                             borderWidth: 1,
                                             borderColor: 'black',
                                             justifyContent: 'center',

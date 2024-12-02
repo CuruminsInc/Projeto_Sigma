@@ -33,22 +33,18 @@ const useInformation = () => {
 
         axios.get(apiUrl + 'client/FindAll')
             .then((response) => {
-                console.log(response.data)
                 setDataClient(response.data)
             })
             .catch((error) => {
-                // Erro: exibe a mensagem de erro
                 console.error('Erro na requisição:', error.message);
             });
 
 
         axios.get(apiUrl + 'vehicle/FindAll')
             .then((response) => {
-                console.log(response.data)
                 setDataVehicle(response.data)
             })
             .catch((error) => {
-                // Erro: exibe a mensagem de erro
                 console.error('Erro na requisição:', error.message);
             });
 

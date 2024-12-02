@@ -22,7 +22,7 @@ export default function History() {
         <TouchableOpacity onPress={() => handlePress(item.id)}>
             <View
                 style={{
-                    width: 400,
+                    width: 350,
                     borderWidth: 0.6,
                     borderColor: 'black',
                     borderRadius: 20,
@@ -36,7 +36,7 @@ export default function History() {
                     style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        width: 375,
+                        width: 325,
                         alignSelf: 'center',
                     }}
                 >
@@ -56,7 +56,7 @@ export default function History() {
                     </View>
                 </View>
                 {openItemId === item.id && (
-                    <View style={{ width: 400, borderTopWidth: 0.6, alignSelf: 'center', marginTop: 10 }}>
+                    <View style={{ width: 348, borderTopWidth: 0.6, alignSelf: 'center', marginTop: 10 }}>
                         <View style={{ marginLeft: 14, marginTop: 10, height: 110 }}>
                             <View style={{ flexDirection: 'column', justifyContent: 'space-between', height: 115 }}>
                                 <Text>Veículo: {item.vehicle.chassis_number}</Text>
@@ -76,7 +76,7 @@ export default function History() {
         <TouchableOpacity onPress={() => handlePress(item.id)}>
             <View
                 style={{
-                    width: 400,
+                    width: 350,
                     borderWidth: 0.6,
                     borderColor: 'black',
                     borderRadius: 20,
@@ -89,7 +89,7 @@ export default function History() {
                     style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        width: 375,
+                        width: 325,
                         alignSelf: 'center',
                     }}
                 >
@@ -109,7 +109,7 @@ export default function History() {
                     </View>
                 </View>
                 {openItemId === item.id && (
-                    <View style={{ width: 400, borderTopWidth: 0.6, alignSelf: 'center', marginTop: 10 }}>
+                    <View style={{ width: 348, borderTopWidth: 0.6, alignSelf: 'center', marginTop: 10 }}>
                         <View style={{ marginLeft: 14, marginTop: 10, height: 160 }}>
                             <View style={{ flexDirection: 'column', justifyContent: 'space-between', height: 170 }}>
                             <Text>Veículo: {item.vehicle.chassis_number}</Text>
@@ -132,7 +132,7 @@ export default function History() {
         <TouchableOpacity onPress={() => handlePress(item.id)}>
             <View
                 style={{
-                    width: 400,
+                    width: 350,
                     borderWidth: 0.6,
                     borderColor: 'black',
                     borderRadius: 20,
@@ -145,7 +145,7 @@ export default function History() {
                     style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        width: 375,
+                        width: 325,
                         alignSelf: 'center',
                     }}
                 >
@@ -165,7 +165,7 @@ export default function History() {
                     </View>
                 </View>
                 {openItemId === item.id && (
-                    <View style={{ width: 400, borderTopWidth: 0.6, alignSelf: 'center', marginTop: 10 }}>
+                    <View style={{ width: 348, borderTopWidth: 0.6, alignSelf: 'center', marginTop: 10 }}>
                         <View style={{ marginLeft: 14, marginTop: 10, height: 110 }}>
                             <View style={{ flexDirection: 'column', justifyContent: 'space-between', height: 115 }}>
                                 <Text>Montadora: {item.manufacturer.company_name}</Text>

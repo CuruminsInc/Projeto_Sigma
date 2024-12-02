@@ -30,16 +30,13 @@ const useSign_up = () => {
   }
 
   async function sing_up() {
-    console.log('oi')
     axios.post(apiUrl + 'seller/Register', {
       username: username,
       password: password
     }).then((response) => {
-      console.log('Sim')
       storeSeller(username)
       navigation.navigate('Home')
     }).catch((error) => {
-      console.log(error)
       showToasts()
 
     })
