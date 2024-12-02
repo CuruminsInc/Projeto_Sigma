@@ -29,7 +29,7 @@ npx sequelize-cli db:migrate --name 20241130152620-create-vehicle.js
 npx sequelize-cli db:migrate --name 20241130152648-create-manufacturer.js
 npx sequelize-cli db:migrate --name 20241130152628-create-operation-buy.js
 npx sequelize-cli db:migrate --name 20241130152637-create-operation-sell.js
-npx sequelize-cli db:migrate --name 20241130152648-create-manufacturer.js
+npx sequelize-cli db:migrate --name 20241130152643-create-operation-order.js
 ```
 
 2.2 Install the seeders in this exact order without using seeder:all
